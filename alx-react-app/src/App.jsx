@@ -35,7 +35,7 @@ function App() {
       <div className="App">
             <WelcomeMessage />
         </div>
-        <div className='App'> 
+        <div className="App"> 
           <Header />
           <MainContent />
           <Footer />
@@ -44,4 +44,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
