@@ -35,7 +35,7 @@ function App() {
       <div className="App">
             <WelcomeMessage />
         </div>
-        <div>
+        <div className='App'> 
           <Header />
           <MainContent />
           <Footer />
