@@ -1,4 +1,4 @@
-import ProfilePage from '.components/ProfilePage'
+import ProfilePage from './components/ProfilePage'
 import UserContext from './components/UserContext'
 import UserProfile from './components/UserProfile'
 import Header from './components/Header'
