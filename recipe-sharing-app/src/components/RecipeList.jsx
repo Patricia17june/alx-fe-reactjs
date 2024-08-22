@@ -1,10 +1,15 @@
 // src/components/RecipeList.js
+import { useParams } from 'react-router-dom';
 import React from 'react';
-import useRecipeStore from './recipeStore';
+import useRecipeStore from '../store/recipeStore';
 
 const RecipeList = () => {
   const recipes = useRecipeStore((state) => state.recipes);
 
+  const RecipeDetails = () => {
+    const { recipeId } = useParams();
+    // use recipeId as shown in the previous RecipeDetails component example
+  
   return (
     <div>
       {recipes.map((recipe) => (
@@ -16,5 +21,5 @@ const RecipeList = () => {
     </div>
   );
 };
-
+};
 export default RecipeList;
