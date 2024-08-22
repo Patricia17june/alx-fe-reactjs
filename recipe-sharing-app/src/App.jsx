@@ -1,8 +1,9 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React from 'react';
 import RecipeList from './components/RecipeList';
+import SearchBar from './components/SearchBar';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AddRecipeForm from './components/AddRecipeForm';
 import RecipeDetails from './components/RecipeDetails';
-import React from 'react';
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -45,6 +46,16 @@ function App() {
         <Route path="/recipe/:recipeId" element={<RecipeDetails />} />
       </Routes>
     </Router>
+    <div>
+      <h1>Recipe Sharing Application</h1>
+      <SearchBar /> {/* Search bar placed at the top for easy access */}
+      <RecipeList /> {/* List of filtered recipes displayed below the search bar */}
+    </div>
+    <div>
+      <h1>Hello World</h1> {/* Check if this renders */}
+      <SearchBar />
+      <RecipeList />
+    </div>
     </>
   )
 }

@@ -3,7 +3,9 @@ import create from 'zustand';
 
 // Zustand store to manage recipes
 const useRecipeStore = create((set) => ({
-  recipes: [], // Initial state: an empty array of recipes
+  recipes: [], // Array to store all recipes
+  searchTerm: '', // The current search term entered by the user
+  filteredRecipes: [], // Array to store filtered recipes based on the search term
   
   // Action to add a new recipe to the store
   addRecipe: (newRecipe) =>
@@ -24,6 +26,16 @@ const useRecipeStore = create((set) => ({
     set((state) => ({
       recipes: state.recipes.filter((recipe) => recipe.id !== id),
     })),
+
+    // Action to update the search term in the store
+  setSearchTerm: (term) => set({ searchTerm: term }),
+
+  // Action to filter recipes based on the search term
+  filterRecipes: () => set((state) => ({
+    filteredRecipes: state.recipes.filter((recipe) =>
+      recipe.title.toLowerCase().includes(state.searchTerm.toLowerCase())
+    ),
+  })),
 }));
 
 // Export the store to be used in other components
