@@ -1,7 +1,7 @@
 // src/components/RecipeList.js
 import { useParams } from 'react-router-dom';
 import React from 'react';
-import useRecipeStore from '../store/recipeStore';
+import useRecipeStore from './recipeStore';
 
 const RecipeList = () => {
   const recipes = useRecipeStore((state) => state.recipes);

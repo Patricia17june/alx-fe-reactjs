@@ -1,5 +1,5 @@
 // src/components/RecipeDetails.jsx
-import { useRecipeStore } from '../store/recipeStore';
+import { useRecipeStore } from './recipeStore';
 
 // This component displays the details of a specific recipe
 const RecipeDetails = ({ recipeId }) => {
