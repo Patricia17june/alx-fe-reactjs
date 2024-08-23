@@ -1,4 +1,5 @@
 // src/components/RecipeList.js
+import { Link } from 'react-router-dom';
 import React, { useEffect } from 'react';
 import { useRecipeStore } from '../store/recipeStore'; // Import the store
 import { useParams } from 'react-router-dom';
@@ -12,8 +13,7 @@ const RecipeList = () => {
 
   const RecipeDetails = () => {
     const { recipeId } = useParams();
-    // use recipeId as shown in the previous RecipeDetails component example
-
+    
     // Use effect to trigger filtering whenever the search term changes
   useEffect(() => {
     filterRecipes();
@@ -26,6 +26,8 @@ const RecipeList = () => {
         <div key={recipe.id}>
           <h3>{recipe.title}</h3>
           <p>{recipe.description}</p>
+          {/* Link to the recipe details page */}
+          <Link to={`/recipe/${recipe.id}`}>View Recipe</Link>
         </div>
       ))}
     </div>
