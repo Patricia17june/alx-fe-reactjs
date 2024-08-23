@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import RecipeList from './components/RecipeList';
 import RecipeDetails from './components/RecipeDetails';
+import FavoritesList from './components/FavoritesList';
+import RecommendationsList from './components/RecommendationsList';
 import SearchBar from './components/SearchBar';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import useRecipeStore from './store/recipeStore';
 import AddRecipeForm from './components/AddRecipeForm';
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
@@ -11,6 +14,14 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const generateRecommendations = useRecipeStore(
+    (state) => state.generateRecommendations
+  );
+
+  // Generate recommendations whenever the app loads or user data changes
+  useEffect(() => {
+    generateRecommendations();
+  }, [generateRecommendations]);
 
   return (
     <>
@@ -51,6 +62,17 @@ function App() {
       <SearchBar /> {/* Search bar placed at the top for easy access */}
       <RecipeList /> {/* List of filtered recipes displayed below the search bar */}
     </div>
+    <Router>
+      <div>
+        <SearchBar />
+        <FavoritesList />
+        <RecommendationsList />
+        <Routes>
+          <Route path="/" element={<RecipeList />} />
+          <Route path="/recipe/:id" element={<RecipeDetails />} />
+        </Routes>
+      </div>
+    </Router>
     </>
   )
 }
