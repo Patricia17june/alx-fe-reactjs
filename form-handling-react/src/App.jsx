@@ -1,6 +1,5 @@
-
 import './App.css'
-import formikForm from './components/formikForm'
+import FormikForm from './components/formikForm'
 
 const App = () => {
 
