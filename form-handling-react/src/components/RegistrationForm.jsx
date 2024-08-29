@@ -12,11 +12,11 @@ const RegistrationForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!formData.username || !formData.email || !formData.password) {
+        if (!username || !email || !password) {
             alert('Please fill all the fields');
             return;
         }
-        console.log('Form submitted', formData);
+        console.log('Form submitted', value);
     };
 
     return (
