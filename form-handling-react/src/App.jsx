@@ -1,7 +1,6 @@
-import { useState } from 'react'
-import RegistrationForm from './components/RegistrationForm'
+
 import './App.css'
-import FormikForm from './components/FormikForm';
+import formikForm from './components/formikForm'
 
 const App = () => {
 
