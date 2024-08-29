@@ -1,60 +1,61 @@
-import { useState } from "react";
+// src/components/RegistrationForm.jsx
+import React, { useState } from 'react';
 
 const RegistrationForm = () => {
-    const [formData, setFormData] = useState({ 
-        username: '', 
-        email: '', 
-        password: '' 
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
     });
+  };
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prevState => ({...prevState, [name]: value}));
-    };
-     
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (!formData.username || !formData.email || !formData.password) {
-            alert('Please fill all the fields');
-        return;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Basic validation
+    if (!formData.username || !formData.email || !formData.password) {
+      alert('All fields are required');
+      return;
     }
-        console.log('Form submitted' ,formData);
-    };
-    return(
-        <form onSubmit={handleSubmit}>
-            <div>
+    // Simulate API call
+    console.log('Form submitted:', formData);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
         <label>Username:</label>
-            <input
-            type="Text"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-            />
-            </div>
+        <input type="text" 
+        name="username" 
+        value={formData.username} 
+        onChange={handleChange} />
+      </div>
 
-            <div>
+      <div>
         <label>Email:</label>
-            <input
-            type="text"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            />
-            </div>
+        <input type="email" 
+        name="email" 
+        value={formData.email} 
+        onChange={handleChange} />
+      </div>
 
-            <div>
+      <div>
         <label>Password:</label>
-            <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            />
-            </div>
-
-          <button type ="submit">Register</button>
-            </form>
-    );
+        <input type="password" 
+        name="password" 
+        value={formData.password} 
+        onChange={handleChange} />
+      </div>
+      
+      <button type="submit">Register</button>
+    </form>
+  );
 };
 
 export default RegistrationForm;
