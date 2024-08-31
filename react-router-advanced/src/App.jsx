@@ -21,7 +21,7 @@ const App = () => {
         </ProtectedRoute >
         }>
         </Route>
-        <Route path= "/blog/:Id" element={<BlogPost />} />
+        <Route path='/blog/:id' element={<BlogPost />} />
       </Routes>
     </Router>
   );
