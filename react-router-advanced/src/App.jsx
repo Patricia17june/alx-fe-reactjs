@@ -4,7 +4,7 @@ import Home from './components/Home';
 import Profile from './components/Profile';
 import UserLogin from './auth/UserLogin';
 import BlogPost from './components/Blogpost';
-import ProtectedRoute from './components/ProtectedRoutes';
+import ProtectedRoute from './components/ProtectedRoute';
 
 
 const App = () => {
