@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 const BlogPost = () => {
-  const { postId } = useParams();
+  const { id } = useParams();
 
   return (
     <div>
@@ -10,6 +10,6 @@ const BlogPost = () => {
       <p>welcome to my blogpost with ID: {id}</p>
     </div>
   );
-}
+};
 
 export default BlogPost;
