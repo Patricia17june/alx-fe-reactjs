@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-// Import your JSON data
-import recipesData from '../data.json';
+import Recipe from '../data.json';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   const [recipes, setRecipes] = useState([]);
 
   // Use useEffect to set the recipe data when the component mounts
   useEffect(() => {
-    setRecipes(recipesData); // Load mock data from data.json
+    setRecipes(Recipe); // Load mock data from data.json
   }, []);
 
   return (
@@ -18,7 +18,7 @@ const HomePage = () => {
         {recipes.map((recipe) => (
           <div 
           key={recipe.id} 
-          className="bg-blue rounded-lg shadow-lg p-4 hover:shadow-xl transition-shadow">
+          className="bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition-shadow">
         
 
             <img src={recipe.image} 
@@ -29,6 +29,7 @@ const HomePage = () => {
             <div className="p-4">
               <h2 className="text-xl font-semibold mb-2">{recipe.title}</h2>
               <p className="text-gray-600">{recipe.summary}</p>
+              <Link to={`/recipe/${recipe.id}`} className="text-blue-500 hover:underline">View Recipe</Link>
             </div>
           </div>
         ))}
