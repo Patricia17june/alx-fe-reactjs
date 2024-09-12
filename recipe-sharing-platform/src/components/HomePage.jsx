@@ -13,7 +13,8 @@ const HomePage = () => {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-6">Recipe List</h1>
- 
+      <Link to="/add-recipe" className="text-blue-500 hover:underline">Add New Recipe</Link>
+      
       <div className="grid grid-cols-1 justify-items-center sm:grid-cols-2 md:grid-cols-3 gap-6">
         {recipes.map((recipe) => (
           <div 
