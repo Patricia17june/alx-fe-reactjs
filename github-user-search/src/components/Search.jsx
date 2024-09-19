@@ -24,6 +24,7 @@ const Search = () => {
     };
 
     return (
+        <div>
         <form onSubmit={handleSubmit}>
             <input 
             type="text"
@@ -33,6 +34,20 @@ const Search = () => {
              />
              <button type="submit">Search</button>
         </form>
+
+        {loading && <p>Loading...</p>}
+        {error && <p>Error</p>}
+
+        {userData && (
+            <div>
+            <h3>{userData.name}</h3>
+            <p>{userData.bio}</p>
+
+            <img src={userData.avatar_url} alt={userData.name} style={{ width: '100px' }} />
+            <a href={userData.html_url} target="_blank" rel="noreferrer">View Profile</a>
+            </div>
+        )} 
+        </div>
     );
 };
 
