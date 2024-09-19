@@ -24,7 +24,7 @@ const Search = () => {
     };
 
     return (
-        <form on submit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <input 
             type="text"
             value={username}
