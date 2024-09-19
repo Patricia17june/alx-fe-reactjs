@@ -40,8 +40,9 @@ const Search = () => {
 
         {userData && (
             <div>
-            <h3>{userData.name}</h3>
-            <p>{userData.bio}</p>
+            <h3>{userData.name ? userData : 'No nama available'}</h3>
+            <p>Username: {userData.login}</p> {/* Display the GitHub login (username) */}
+            <p>{userData.bio ? userData.bio : 'No bio available'}</p>
 
             <img src={userData.avatar_url} alt={userData.name} style={{ width: '100px' }} />
             <a href={userData.html_url} target="_blank" rel="noreferrer">View Profile</a>
