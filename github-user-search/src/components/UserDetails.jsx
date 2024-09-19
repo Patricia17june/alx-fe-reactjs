@@ -6,7 +6,7 @@ const UserDetails = () => {
 
     return(
         <div>
-            <h1>UserDetai; for {UserName}</h1>
+            <h1>UserDetail; for {UserName}</h1>
         </div>
     )
 }
