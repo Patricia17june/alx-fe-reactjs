@@ -6,7 +6,7 @@ const Search = () => {
     const [username, setUsername] = useState('');
     const [location, setLocation] = useState('');
     const [minRepos, setMinRepos] = useState('');
-    const [userData, setUserData] = useState('');
+    const [userData, setUserData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
@@ -55,7 +55,7 @@ const Search = () => {
                 <input 
                 type="number"
                 value={minRepos}
-                onChange={(e) => setMinRepos(e.target.valueAsDate)}
+                onChange={(e) => setMinRepos(e.target.value)}
                 placeholder="Minimum repositories"
                 className="w-full p-2 border-gray-300 rounded"
                 />
